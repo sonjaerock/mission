@@ -1,18 +1,34 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div class="container">
+    <div class="app">
+      <app-problem></app-problem>
+      <app-result></app-result>
+    </div>
   </div>
 </template>
 
 <script>
+import Problem from './components/Problem.vue';
+import Result from './components/Result.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'app-problem' : Problem,
+    'app-result' : Result,
+  }
 }
 </script>
 
 <style>
-#app {
+.container {
+  width:100%;
+}
+
+.app {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
