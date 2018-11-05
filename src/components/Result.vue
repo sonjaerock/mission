@@ -17,5 +17,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .result {
+    width: 150px;
+    height: 100%;
+    border: 1px black solid;
+    border-left: none;
+    float: left;
+  }
 </style>
