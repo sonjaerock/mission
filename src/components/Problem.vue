@@ -1,16 +1,33 @@
 <template>
   <div class="problem">
-      {{ msg }}
+      {{ problemList }}
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
   name: 'Problem',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      
     }
+  },
+  computed: {
+      ...mapGetters({
+        problemList: 'problemList',
+      }),
+    },
+
+  methods: {
+    setProblems: function(){
+      console.log("ddd");
+      this.$store.dispatch("setProblemList");
+    }
+  },
+  created() {
+    this.setProblems();
   }
 }
 </script>
