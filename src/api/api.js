@@ -7,6 +7,10 @@ export function fetchProblem(body){
   return axios.get(API_PATH + 'api/fetchProblem');
 }
 
-export function logout(token){
-  return axios.post(API_PATH + 'user/logout/?token='+token);
+export function submit(body){
+  return axios.post(API_PATH + 'api/submit',{
+    headers: {
+      'content-type': 'x-www-form-url-urlencoded'
+    }, body
+  });
 }
