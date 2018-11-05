@@ -7,7 +7,11 @@ const defaultState = {
 const actions = {
   submit: (context, payload) => {
     console.log(payload.answerList);
-    api.submit(payload.answerList)
+    let input = {
+      input: payload.answerList
+    };
+
+    api.submit(JSON.stringify(input))
       .then((res) => {
         console.log(res);
         if (res.status === 200) {

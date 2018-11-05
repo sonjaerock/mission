@@ -11,7 +11,7 @@
           <input
             type="radio"
             :name="'select' + index"
-            @click="clickAnswer(index+1, choice)"
+            @click="inputAnswer(index+1, choice)"
             :value="choice">
             {{ choice }}
         </span>
@@ -24,7 +24,7 @@
           rows="8"
           cols="80"
           v-model="tmp"
-          @change="clickAnswer(index+1, tmp)"
+          @change="inputAnswer(index+1, tmp)"
           >
       </div>
     </div>
@@ -70,7 +70,7 @@ export default {
          "answerList" : this.answer
        });
     },
-    clickAnswer: function(problemNumber, answer) {
+    inputAnswer: function(problemNumber, answer) {
       let obj = {
         'id': problemNumber,
         'answer': answer.toString()

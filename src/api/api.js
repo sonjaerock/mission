@@ -8,9 +8,5 @@ export function fetchProblem(body){
 }
 
 export function submit(body){
-  return axios.post(API_PATH + 'api/submit',{
-    headers: {
-      'content-type': 'x-www-form-url-urlencoded'
-    }, body
-  });
+  return axios.post(API_PATH + 'api/submit', body);
 }
